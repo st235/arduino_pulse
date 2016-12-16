@@ -13,15 +13,18 @@ void setup()
 
 void loop()
 { 
-  //if (Serial.available())
-  //{
+  if (Serial.available())
+  {
+    byte incomingByte = Serial.read();
+
+    if (incomingByte == 1) digitalWrite(13, HIGH);
        //if (Pulse.check(ISP_VALID)==ISP_CONNECTED){
        // Serial.println(Pulse.check(ISP_PULSE));
        //} else {
        // Serial.println(-1);
        //}
 
-       Serial.printf("{ \"key\": %d }\n", 5)
+       Serial.print("{ \"key\": 5 }\n");
        delay(10);
-  //}
+  }
 }
